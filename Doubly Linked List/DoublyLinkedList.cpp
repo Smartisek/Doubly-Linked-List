@@ -84,13 +84,13 @@ bool isPalindrome(DList<T>& list) {
     }
 }
 
-//template<class T> 
-//void arrayToListReversed(T& arr, int size,DList<T>& list) {
-//    for (int i = size - 1; i >= 0; i--) {
-//        list.append(i);
-//    }
-//
-//}
+template<class T> 
+void arrayToListReversed(T* arr, int size, DList<T>& list) {
+    for (int i = size - 1; i >= 0; i--) {
+        list.append(arr[i]);
+    }
+
+}
 
 int main()
 {
@@ -128,12 +128,13 @@ int main()
 	display(nums, "not palindrome");
 	cout << isPalindrome(nums) << endl;
     
-    /*int storage[10];
-    for (int i = 1; i < 10; i++) {
-		storage[i] = i;
-    }
-    DList<int> listFromArray;
-    arrayToListReversed(storage,10 ,listFromArray);*/
+    DList<int> arrToList;
+    int arr[10];
+	for (int i = 0; i < 10; i++) {
+		arr[i] = i;
+	}
+    arrayToListReversed(arr, 10, arrToList);
+	display(arrToList, "array to list reversed");
 
 	return 0;
 }
